@@ -1,0 +1,268 @@
+JSON data
+1. user
+    1.1 register:
+        apiUrl: localhost:8000/api/users/register/
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password,
+            email: email,
+            password_confirmation: password_confirmation
+        })
+
+        JSON data:
+        valid:
+        {
+            "username": "admin",
+            "password": "12345678",
+            "email": "111@qq.com",
+            "password_confirmation": "12345678"
+        }
+        invalid(example):
+        {
+            "username": "admin",
+            "password": "123456",
+            "email": "111",
+            "password_confirmation": "123456"
+        }
+
+    1.2 login
+        apiUrl: localhost:8000/api/users/login/
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password,
+        })
+
+
+        JSON data:
+        {
+            "username": "admin",
+            "password": "12345678",
+        }
+
+2. quiz
+    2.1 get quiz list by page
+        apiUrl: localhost:8000/api/quiz/?page={page_number}
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        }
+    2.2 create quiz 
+        apiUrl: localhost:8000/api/quiz/
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            SelectA: "2",
+            SelectB: "3",
+            SelectC: "4",
+            SelectD: "5",
+            description: "2 + 2 = ?",
+            answer: "4",
+            type: 0,
+            score: 20,
+            lesson: "Maths"
+        })
+
+
+        JSON data:
+        {
+            "SelectA": "2",
+            "SelectB": "3",
+            "SelectC": "4",
+            "SelectD": "5",
+            "description": "2 + 2 = ?",
+            "answer": "4",
+            "type": 0,
+            "score": 20,
+            "lesson": "Maths"
+        }
+        {
+            "SelectA": "2",
+            "SelectB": "3",
+            "SelectC": "4",
+            "SelectD": "5",
+            "description": "1 + 1 = ?",
+            "answer": "2",
+            "type": 0,
+            "score": 20,
+            "lesson": "Maths"
+        }
+        {
+            "SelectA": "1",
+            "SelectB": "3",
+            "SelectC": "4",
+            "SelectD": "5",
+            "description": "1 * 1 = ?",
+            "answer": "1",
+            "type": 0,
+            "score": 20,
+            "lesson": "Maths"
+        }
+        {
+            "SelectA": "2",
+            "SelectB": "3",
+            "SelectC": "4",
+            "SelectD": "5",
+            "description": "1 + 2 < ?",
+            "answer": "4,5",
+            "type": 0,
+            "score": 20,
+            "lesson": "Maths"
+        }
+        {
+            "SelectA": "2",
+            "SelectB": "3",
+            "SelectC": "4",
+            "SelectD": "5",
+            "description": "3 + 2 > ?",
+            "answer": "2,3,4",
+            "type": 0,
+            "score": 20,
+            "lesson": "Maths"
+        }
+        {
+            "SelectA": "2",
+            "SelectB": "3",
+            "SelectC": "4",
+            "SelectD": "5",
+            "description": "3 + 2 = ?",
+            "answer": "5",
+            "type": 0,
+            "score": 20,
+            "lesson": "Maths"
+        }
+        {
+            "SelectA": "you",
+            "SelectB": "nnn",
+            "SelectC": "hhh",
+            "SelectD": "uuu",
+            "description": "Which word is correct?",
+            "answer": "you",
+            "type": 0,
+            "score": 20,
+            "lesson": "English"
+        }
+        {
+            "SelectA": "rrr",
+            "SelectB": "nnn",
+            "SelectC": "hello",
+            "SelectD": "uuu",
+            "description": "Which word is correct?",
+            "answer": "hello",
+            "type": 0,
+            "score": 20,
+            "lesson": "English"
+        }
+        {
+            "SelectA": "iii",
+            "SelectB": "nnn",
+            "SelectC": "hhh",
+            "SelectD": "nice",
+            "description": "Which word is correct?",
+            "answer": "nice",
+            "type": 0,
+            "score": 20,
+            "lesson": "English"
+        }
+        {
+            "SelectA": "you",
+            "SelectB": "nnn",
+            "SelectC": "hhh",
+            "SelectD": "nice",
+            "description": "Which words are correct?",
+            "answer": "you,nice",
+            "type": 0,
+            "score": 20,
+            "lesson": "English"
+        }
+        {
+            "SelectA": "uuu",
+            "SelectB": "yes",
+            "SelectC": "hhh",
+            "SelectD": "no",
+            "description": "Which words are correct?",
+            "answer": "yes,no",
+            "type": 0,
+            "score": 20,
+            "lesson": "English"
+        }
+        {
+            "SelectA": "uuu",
+            "SelectB": "yes",
+            "SelectC": "you",
+            "SelectD": "no",
+            "description": "Which words are correct?",
+            "answer": "yes,you,no",
+            "type": 0,
+            "score": 20,
+            "lesson": "English"
+        }
+    2.3 answer a quiz, make an attempt to a quiz
+        apiUrl: localhost:8000/api/quiz/attempt
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            quiz: quiz,
+            attempt: attempt,
+        })
+
+        JSON data:
+        valid:
+        {
+            "attempt": "4",
+            "quiz": 1
+        }
+        invalid(Quiz doesn't exist):
+        {
+            "attempt": "4",
+            "quiz": 100          
+        }
+    2.4 get quiz list by lesson(randomly get 5 quizzes from the quiz pool)
+        apiUrl: localhost:8000/api/quiz/{'English' or 'Maths'}
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        }   
+
+    2.5 answer a list of quizzes(by lesson)
+        apiUrl: localhost:8000/api/quiz/attempts_quizzes_lesson/
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            quizzes: quizzes,
+        })
+
+        JSON data:
+        //This is just an example, because the list is randomly picked from the pool. Suggest using
+        frontend functionalities to test this API or manually write JSON data according to the instant
+        result of API 2.4.
+        valid:
+        {
+            "quizzes":{"1":"you", "3":"you","4":"I","5":"you","6":"you"}
+        }
+        invalid: incorrect quiz id or sequence
+    2.6 get attempts by user(for statistic)
+        apiUrl: localhost:8000/api/quiz/attempt_by_user/
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        } 
+
