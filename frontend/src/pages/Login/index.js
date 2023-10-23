@@ -62,7 +62,7 @@ const Login = () => {
             marginLeft: '30px',
           }}
         />
-        <h2 style={{ margin: '0' }}>Welcome Back</h2>
+        <h3 style={{ margin: '0' }}>Welcome Back</h3>
       </div>
 
       <Form.Item
