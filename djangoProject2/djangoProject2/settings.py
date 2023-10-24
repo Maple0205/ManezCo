@@ -171,3 +171,5 @@ AUTHENTICATION_BACKENDS = [
 
 MEDIA_ROOT = BASE_DIR / 'file/image'
 MEDIA_URL = 'file/image/'
+
+ALLOWED_HOSTS = ['https://manez-backend.onrender.com']
