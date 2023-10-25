@@ -85,9 +85,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bgxairlidyifj8gkluyn',
         'USER': 'uqolp3enrhgqyokn',
-        'PASSWORD': 'N0JXTLm76twvMXfbjqFv',
-        'PORT': 3306,
+        'PASSWORD': 'J0Ki4Em4exJbyJ1gF0IG',
         'HOST': 'bgxairlidyifj8gkluyn-mysql.services.clever-cloud.com',
+        'PORT': 3306,
     }
 }
 
@@ -172,4 +172,4 @@ AUTHENTICATION_BACKENDS = [
 MEDIA_ROOT = BASE_DIR / 'file/image'
 MEDIA_URL = 'file/image/'
 
-ALLOWED_HOSTS = ['https://manez-backend.onrender.com']
+# ALLOWED_HOSTS = ['https://manez-backend.onrender.com']
