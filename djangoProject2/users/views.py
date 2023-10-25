@@ -1,5 +1,6 @@
 import os
 import re
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework import status, mixins
 from rest_framework.response import Response
@@ -17,6 +18,8 @@ from rest_framework.permissions import IsAuthenticated
 
 from common.serializers import CustomResponse
 
+def root_path(request):
+    return HttpResponse(status=200)
 
 class RegisterView(APIView):
     def post(self, request):

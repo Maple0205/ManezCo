@@ -18,10 +18,14 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 
 from common.File_reader import FileView
+from users.views import root_path
 
 urlpatterns = [
+    path('', root_path),
     path('admin/', admin.site.urls),
     re_path(r'file/image/(.+?)$',FileView.as_view()),
     path('api/users/', include('users.urls')),
     path('api/quiz/', include('quiz.urls')),
 ]
+
+
