@@ -2,11 +2,11 @@ import React, {  useState } from 'react';
 import { Button, Modal } from 'antd';
 import TestBlock from '../TestBlock';
 import baseUrl from '../../config';
+
+const QuizTestModal = (props) => {
 const apiPath = 'quiz/';
 const apiUrl = `${baseUrl}${apiPath}`;
 const token = sessionStorage.getItem('token');
-
-const QuizTestModal = (props) => {
   const [quizzes, setQuizzes] = useState({});
   const [quizData, setQuizData] = useState([]);
   const get_quizzes = async () => {
