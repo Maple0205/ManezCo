@@ -34,7 +34,7 @@ const Login = () => {
     if (data.status !== 200) {
       alert(data.msg);
     } else {
-      console.log(data);
+      console.log(data.data.token);
       sessionStorage.setItem('token', data.data.token);
       message.success("Login Succeeded!");
       navigate("/dashboard");
