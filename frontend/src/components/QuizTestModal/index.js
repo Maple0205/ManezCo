@@ -10,6 +10,7 @@ const QuizTestModal = (props) => {
   const [quizzes, setQuizzes] = useState({});
   const [quizData, setQuizData] = useState([]);
   const get_quizzes = async () => {
+    console.log(props.title);
     const response = await fetch(apiUrl+props.title, {
       method: 'GET',
       headers: {
@@ -17,6 +18,7 @@ const QuizTestModal = (props) => {
       }
     });
     const data = await response.json();
+    console.log(data);
     if (response.status !== 200) {
       alert(response.msg);
     }
