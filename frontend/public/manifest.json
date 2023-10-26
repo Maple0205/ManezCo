@@ -1,6 +1,6 @@
 {
-  "short_name": "My Tennis",
-  "name": "Tennis Class Notebook",
+  "short_name": "ManezCo",
+  "name": "ManezCo Quiz",
   "icons": [
     {
       "src": "icons8-tennis-emoji-96.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "tennis.png",
+      "src": "logo_manez.jpeg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "tennis.png",
+      "src": "logo_manez.jpeg",
       "type": "image/png",
       "sizes": "512x512"
     }
