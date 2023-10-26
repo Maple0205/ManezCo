@@ -10,7 +10,7 @@ const QuizTestModal = (props) => {
   const [quizzes, setQuizzes] = useState({});
   const [quizData, setQuizData] = useState([]);
   const get_quizzes = async () => {
-    console.log(props.title);
+    console.log(token);
     const response = await fetch(apiUrl+props.title, {
       method: 'GET',
       headers: {
