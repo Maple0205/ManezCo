@@ -40,7 +40,7 @@ const QuizDashboard = () => {
   <>
     <QuizGrid quizes={quizes} get_quizes={get_quizes}/>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end'}}>
-      <div style={{ position:'fixed', bottom:'15%'}}>
+      <div style={{ position:'fixed', bottom:'10%'}}>
         <Pagination current={current} onChange={onChange} pageSize={6} total={total} />
       </div>
     </div>
