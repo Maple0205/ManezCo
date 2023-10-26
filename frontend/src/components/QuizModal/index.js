@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Radio, Checkbox, Space } from 'antd';
+import { Modal, Radio, Checkbox, Space, Button } from 'antd';
 import baseUrl from '../../config';
 const apiPath = 'quiz/attempt';
 const apiUrl = `${baseUrl}${apiPath}`;
@@ -69,9 +69,10 @@ const QuizModal = (props) => {
   return (
     <>
       {/* eslint-disable-next-line */}
-      <a onClick={showModal}>
-        Attempt
-      </a>
+      {/* <button onClick={showModal} >
+        c
+      </button> */}
+      <Button type="link" onClick={showModal}>Attempt</Button>
       <Modal title={`# ${props.quiz.id} ${props.quiz.type === 0 ? (
           'Single Choice'
         ) : props.quiz.type === 1 ? (
